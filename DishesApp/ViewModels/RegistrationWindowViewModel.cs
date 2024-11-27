@@ -8,6 +8,7 @@ namespace DishesApp.ViewModels
         public string PatronymicString { get; } = "Отчество";
         public string PasswordString { get; } = "Пароль";
         public string RegistrationString { get; } = "Регистрация";
+        public string ContinueString { get; } = "Продолжить";
         public string LoginProposalString { get; } = "Уже есть аккаунт?";
     }
 }

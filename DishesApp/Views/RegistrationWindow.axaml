@@ -50,7 +50,7 @@
                         Background="Whitesmoke"
                         Height="40"
                         Cursor="Hand"
-                        Content="{Binding RegistrationString, FallbackValue='%RegistrationString%'}" />
+                        Content="{Binding ContinueString, FallbackValue='%ContinueString%'}" />
 
                 <Button x:Name="LoginButton"
                         Margin="20,20,20,0" 
