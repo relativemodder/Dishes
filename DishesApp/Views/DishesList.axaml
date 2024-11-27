@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="600"
+             xmlns:vm="using:DishesApp.ViewModels"xmlns:views="using:DishesApp.Views"
+             x:DataType="vm:DishesListViewModel"
+             x:Class="DishesApp.Views.DishesList">
+	<Design.DataContext>
+		<vm:DishesListViewModel />
+	</Design.DataContext>
+
+	<StackPanel>
+		<views:DishItem />
+		<views:DishItem />
+		<views:DishItem />
+		<views:DishItem />
+		<views:DishItem />
+		<views:DishItem />
+		<views:DishItem />
+	</StackPanel>
+	
+</UserControl>
