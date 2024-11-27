@@ -6,6 +6,7 @@
         x:Class="DishesApp.Views.LoginWindow"
         xmlns:vm="using:DishesApp.ViewModels"
         x:DataType="vm:LoginWindowViewModel"
+        WindowStartupLocation="CenterScreen" 
         Title="{Binding LoginString}">
 	<Design.DataContext>
 		<vm:LoginWindowViewModel/>

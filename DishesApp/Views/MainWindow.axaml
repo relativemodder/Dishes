@@ -7,6 +7,7 @@
         mc:Ignorable="d" Width="700" Height="450"
         x:Class="DishesApp.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
+        WindowStartupLocation="CenterScreen" 
         Icon="/Assets/icon.ico" Background="WhiteSmoke"
         Title="{Binding Title}">
 

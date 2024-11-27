@@ -6,6 +6,7 @@
         x:Class="DishesApp.Views.RegistrationWindow"
         xmlns:vm="using:DishesApp.ViewModels"
         x:DataType="vm:RegistrationWindowViewModel"
+        WindowStartupLocation="CenterScreen" 
         Title="{Binding RegistrationString}">
 	<Design.DataContext>
 		<vm:RegistrationWindowViewModel/>
