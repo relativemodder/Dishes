@@ -2,17 +2,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" CanResize="False" Width="400" Height="500"
-        x:Class="DishesApp.Views.LoginWindow"
+        mc:Ignorable="d" CanResize="False" Width="400" Height="630"
+        x:Class="DishesApp.Views.RegistrationWindow"
         xmlns:vm="using:DishesApp.ViewModels"
-        x:DataType="vm:LoginWindowViewModel"
-        Title="{Binding LoginString}">
+        x:DataType="vm:RegistrationWindowViewModel"
+        Title="{Binding RegistrationString}">
 	<Design.DataContext>
-		<vm:LoginWindowViewModel/>
+		<vm:RegistrationWindowViewModel/>
 	</Design.DataContext>
 
         <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="{Binding LoginString, FallbackValue='%LoginString%'}" 
+                <TextBlock Text="{Binding RegistrationString, FallbackValue='%RegistrationString%'}" 
                         FontSize="34"
                         HorizontalAlignment="Center"
                         Margin="0,20,0,0" />
@@ -23,11 +23,26 @@
                 <TextBox x:Name="EmailTextBox" Margin="20,10,20,0" />
 
                 <TextBlock Margin="20,20,0,0" 
+                        Text="{Binding SurnameString, FallbackValue='%SurnameString%'}"
+                        Foreground="Gray" />
+                <TextBox x:Name="SurnameTextBox" Margin="20,10,20,0" />
+
+                <TextBlock Margin="20,20,0,0" 
+                        Text="{Binding NameString, FallbackValue='%NameString%'}"
+                        Foreground="Gray" />
+                <TextBox x:Name="NameTextBox" Margin="20,10,20,0" />
+
+                <TextBlock Margin="20,20,0,0" 
+                        Text="{Binding PatronymicString, FallbackValue='%PatronymicString%'}"
+                        Foreground="Gray" />
+                <TextBox x:Name="PatronymicTextBox" Margin="20,10,20,0" />
+
+                <TextBlock Margin="20,20,0,0" 
                         Text="{Binding PasswordString, FallbackValue='%PasswordString%'}"
                         Foreground="Gray" />
                 <TextBox PasswordChar="*" x:Name="PasswordTextBox" Margin="20,10,20,0" />
 
-                <Button x:Name="LoginButton"
+                <Button x:Name="RegistrationButton"
                         Margin="20,20,20,0" 
                         HorizontalAlignment="Stretch"
                         HorizontalContentAlignment="Center"
@@ -35,9 +50,9 @@
                         Background="Whitesmoke"
                         Height="40"
                         Cursor="Hand"
-                        Content="{Binding LoginString, FallbackValue='%LoginString%'}" />
+                        Content="{Binding RegistrationString, FallbackValue='%RegistrationString%'}" />
 
-                <Button x:Name="RegistrationButton"
+                <Button x:Name="LoginButton"
                         Margin="20,20,20,0" 
                         HorizontalAlignment="Stretch"
                         HorizontalContentAlignment="Center"
@@ -45,7 +60,7 @@
                         Background="White"
                         Height="40"
                         Cursor="Hand"
-                        Content="{Binding RegistrationString, FallbackValue='%RegistrationString%'}" />
+                        Content="{Binding LoginProposalString, FallbackValue='%LoginProposalString%'}" />
 
         </StackPanel>
 </Window>

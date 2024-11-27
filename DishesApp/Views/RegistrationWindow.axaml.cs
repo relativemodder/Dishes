@@ -6,17 +6,17 @@ using DishesApp.ViewModels;
 
 namespace DishesApp.Views
 {
-    public partial class LoginWindow : Window
+    public partial class RegistrationWindow : Window
     {
-        public LoginWindow()
+        public RegistrationWindow()
         {
             InitializeComponent();
-            KeyDown += LoginWindow_KeyDown;
-            LoginButton.Click += LoginButton_Click;
+            KeyDown += RegistrationWindow_KeyDown;
             RegistrationButton.Click += RegistrationButton_Click;
+            LoginButton.Click += LoginButton_Click;
         }
 
-        private void LoginWindow_KeyDown(object? sender, KeyEventArgs e)
+        private void RegistrationWindow_KeyDown(object? sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape) {
                 Close();
@@ -25,16 +25,17 @@ namespace DishesApp.Views
 
         private void RegistrationButton_Click(object? sender, RoutedEventArgs e)
         {
-            Hide();
-            var registrationWindow = new RegistrationWindow();
-            registrationWindow.DataContext = new RegistrationWindowViewModel();
-            registrationWindow.ShowDialog(MainWindow.GetInstance());
             Close();
         }
 
         private void LoginButton_Click(object? sender, RoutedEventArgs e)
         {
+            Hide();
+            var loginWindow = new LoginWindow();
+            loginWindow.DataContext = new LoginWindowViewModel();
+            loginWindow.ShowDialog(MainWindow.GetInstance());
             Close();
         }
+
     }
 }

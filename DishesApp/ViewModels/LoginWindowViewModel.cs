@@ -5,6 +5,6 @@
         public string EmailString { get; } = "E-mail";
         public string PasswordString { get; } = "Пароль";
         public string LoginString { get; } = "Войти";
-        public string RegisterString { get; } = "Регистрация";
+        public string RegistrationString { get; } = "Регистрация";
     }
 }

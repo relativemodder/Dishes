@@ -18,9 +18,35 @@
 		</StackPanel>
 
 		<StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">
-			<Button Padding="10" Background="White" Margin="10,0,10,0" FontWeight="Medium" VerticalAlignment="Center" Content="{Binding ShoppingCartString, FallbackValue='%ShoppingCartString%'}" Cursor="Hand" />
-			<Button Padding="10" Background="White" Margin="10,0,10,0" FontWeight="Medium" VerticalAlignment="Center" Content="{Binding LoginString, FallbackValue='%LoginString%'}" Cursor="Hand" />
-			<Button Padding="10" Background="White" Margin="10,0,10,0" FontWeight="Medium" VerticalAlignment="Center" Content="{Binding RegistrationString, FallbackValue='%RegistrationString%'}" Cursor="Hand" />
+			<Button 
+				x:Name="ShoppingCartButton"
+				Padding="10" 
+				Background="White" 
+				Margin="0,0,10,0" 
+				FontWeight="Medium" 
+				VerticalAlignment="Center" 
+				Content="{Binding ShoppingCartString, FallbackValue='%ShoppingCartString%'}" 
+				Cursor="Hand" />
+				
+			<Button 
+				x:Name="LoginButton"
+				Padding="10" 
+				Background="White" 
+				Margin="0,0,10,0" 
+				FontWeight="Medium" 
+				VerticalAlignment="Center" 
+				Content="{Binding LoginString, FallbackValue='%LoginString%'}" 
+				Cursor="Hand" />
+
+			<Button 
+				x:Name="RegistrationButton"
+				Padding="10" 
+				Background="White" 
+				Margin="0,0,10,0" 
+				FontWeight="Medium" 
+				VerticalAlignment="Center" 
+				Content="{Binding RegistrationString, FallbackValue='%RegistrationString%'}" 
+				Cursor="Hand" />
 		</StackPanel>
 	</Grid>
 </UserControl>
