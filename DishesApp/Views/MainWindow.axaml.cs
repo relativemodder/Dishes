@@ -7,6 +7,8 @@ namespace DishesApp.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            WindowHeaderBar.DataContext = new ViewModels.HeaderBarViewModel();
         }
     }
 }

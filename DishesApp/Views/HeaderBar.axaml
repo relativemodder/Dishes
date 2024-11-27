@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:DishesApp.ViewModels"
+             x:DataType="vm:HeaderBarViewModel"
+             mc:Ignorable="d" d:DesignWidth="600" Height="50"
+			 Background="White"
+             x:Class="DishesApp.Views.HeaderBar">
+	<Grid ColumnDefinitions="200,*">
+		<Design.DataContext>
+			<vm:HeaderBarViewModel/>
+		</Design.DataContext>
+
+		<StackPanel Orientation="Horizontal" Grid.Column="0" Margin="15, 5, 0, 15" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="Hand">
+			<Image Source="avares://DishesApp/Assets/icon.png" VerticalAlignment="Center" />
+			<TextBlock Margin="10,0,0,0" FontWeight="Medium" Text="{Binding LogoText, FallbackValue='Текст лого'}" VerticalAlignment="Center" />
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Margin="0, 15, 15, 15" VerticalAlignment="Center">
+			<TextBlock Margin="15,0,0,15" FontWeight="Medium" Text="{Binding ShoppingCartString, FallbackValue='%cartString%'}" Cursor="Hand" />
+			<TextBlock Margin="15,0,0,15" FontWeight="Medium" Text="{Binding LoginString, FallbackValue='%loginString%'}" Cursor="Hand" />
+			<TextBlock Margin="15,0,0,15" FontWeight="Medium" Text="{Binding RegistrationString, FallbackValue='%registrationString%'}" Cursor="Hand" />
+		</StackPanel>
+	</Grid>
+</UserControl>
