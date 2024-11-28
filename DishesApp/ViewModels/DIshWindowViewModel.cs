@@ -5,12 +5,12 @@ namespace DishesApp.ViewModels
     public partial class DishWindowViewModel : ViewModelBase
     {
         public required Product Product { get; set; }
-        public string ProductNameString { get; } = "Название: ";
-        public string ProductManufacturerString { get; } = "Производитель: ";
-        public string ProductArticleString { get; } = "Артикул: ";
-        public string ProductCategoryString { get; } = "Категория: ";
-        public string ProductDiscountString { get; } = "Скидка!!! ";
+        public string ProductNameString { get; } = "РќР°Р·РІР°РЅРёРµ: ";
+        public string ProductManufacturerString { get; } = "РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ: ";
+        public string ProductArticleString { get; } = "РђСЂС‚РёРєСѓР»: ";
+        public string ProductCategoryString { get; } = "РљР°С‚РµРіРѕСЂРёСЏ: ";
+        public string ProductDiscountString { get; } = "РЎРєРёРґРєР°!!! ";
         public string ProductDiscountAmountCString { get; } = "%";
-        public string CurrencyString { get; } = " руб.";
+        public string CurrencyString { get; } = " СЂСѓР±.";
     }
 }
