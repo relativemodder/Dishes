@@ -1,6 +1,9 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Markup.Xaml;
+using DishesApp.ViewModels;
+using System;
 
 namespace DishesApp.Views
 {
@@ -9,6 +12,17 @@ namespace DishesApp.Views
         public DishItem()
         {
             InitializeComponent();
+            PointerPressed += OnPointerPressed;
+        }
+
+        private void OnPointerPressed(object? sender, PointerPressedEventArgs e)
+        {
+            var prevWindow = App.CurrentWindow;
+            var dishWindow = new DishWindow();
+            App.NavigateTo(prevWindow, dishWindow, new DishWindowViewModel()
+            {
+                Product = null
+            });
         }
     }
 }

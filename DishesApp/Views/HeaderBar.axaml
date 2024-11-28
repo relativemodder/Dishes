@@ -12,7 +12,10 @@
 			<vm:HeaderBarViewModel/>
 		</Design.DataContext>
 
-		<StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="Hand">
+		<StackPanel x:Name="LogoPanel"
+			Orientation="Horizontal" Grid.Column="0" 
+			HorizontalAlignment="Left" VerticalAlignment="Center" 
+			Cursor="Hand">
 			<Image Source="avares://DishesApp/Assets/icon.png" Width="25" Margin="15,0,0,0" VerticalAlignment="Center" />
 			<TextBlock Margin="10,0,0,0" FontWeight="Medium" Text="{Binding LogoText, FallbackValue='Текст лого'}" VerticalAlignment="Center" />
 		</StackPanel>

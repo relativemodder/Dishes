@@ -28,7 +28,7 @@ namespace DishesApp.Views
             Hide();
             var registrationWindow = new RegistrationWindow();
             registrationWindow.DataContext = new RegistrationWindowViewModel();
-            registrationWindow.ShowDialog(MainWindow.GetInstance());
+            registrationWindow.ShowDialog(App.CurrentWindow);
             Close();
         }
 

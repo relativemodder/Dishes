@@ -33,7 +33,7 @@ namespace DishesApp.Views
             Hide();
             var loginWindow = new LoginWindow();
             loginWindow.DataContext = new LoginWindowViewModel();
-            loginWindow.ShowDialog(MainWindow.GetInstance());
+            loginWindow.ShowDialog(App.CurrentWindow);
             Close();
         }
 

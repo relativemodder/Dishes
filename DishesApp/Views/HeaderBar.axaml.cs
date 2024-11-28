@@ -14,23 +14,38 @@ namespace DishesApp.Views
         public HeaderBar()
         {
             InitializeComponent();
+            LogoPanel.PointerPressed += LogoPanel_PointerPressed;
+            ShoppingCartButton.Click += ShoppingCartButton_Click;
             LoginButton.Click += LoginButton_Click;
             RegistrationButton.Click += RegistrationButton_Click;
         }
-        
+
+        private void ShoppingCartButton_Click(object? sender, RoutedEventArgs e)
+        {
+            var prevWindow = App.CurrentWindow;
+            var cartWindow = new CartWindow();
+            App.NavigateTo(prevWindow, cartWindow, new CartWindowViewModel() { Products = new System.Collections.Generic.List<Models.Product>()});
+        }
+
+        private void LogoPanel_PointerPressed(object? sender, PointerPressedEventArgs e)
+        {
+            var prevWindow = App.CurrentWindow;
+            var mainWindow = new MainWindow();
+            App.NavigateTo(prevWindow, mainWindow, new MainWindowViewModel());
+        }
+
         private void LoginButton_Click(object? sender, RoutedEventArgs e)
         {
             var loginWindow = new LoginWindow();
-            var parentWindow = MainWindow.GetInstance();
             loginWindow.DataContext = new LoginWindowViewModel();
-            loginWindow.ShowDialog(parentWindow);
+            loginWindow.ShowDialog(App.CurrentWindow);
         }
 
         private void RegistrationButton_Click(object? sender, RoutedEventArgs e)
         {
             var registrationWindow = new RegistrationWindow();
             registrationWindow.DataContext = new RegistrationWindowViewModel();
-            registrationWindow.ShowDialog(MainWindow.GetInstance());
+            registrationWindow.ShowDialog(App.CurrentWindow);
         }
 
     }

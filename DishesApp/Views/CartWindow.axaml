@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:DishesApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="using:DishesApp.Views"
+        mc:Ignorable="d" Width="700" Height="450"
+        x:Class="DishesApp.Views.CartWindow"
+        x:DataType="vm:CartWindowViewModel"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Assets/icon.ico" Background="WhiteSmoke"
+        Title="{Binding Title}">
+
+	<Design.DataContext>
+		<vm:CartWindowViewModel/>
+	</Design.DataContext>
+
+	<Grid RowDefinitions="50,*,50">
+		<views:HeaderBar x:Name="WindowHeaderBar">
+			<views:HeaderBar.Effect>
+				<DropShadowEffect BlurRadius="10" Opacity="0.1" />
+			</views:HeaderBar.Effect>
+		</views:HeaderBar>
+		<ScrollViewer
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            Grid.Row="1"
+            Margin="10">
+			<views:DishesList />
+		</ScrollViewer>
+		<Grid ColumnDefinitions="*,200" Grid.Row="2" Background="White">
+			<StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0,0,0">
+				<TextBlock VerticalAlignment="Center" Text="{Binding ProductCountString}" />
+				<TextBlock VerticalAlignment="Center" Text="{Binding ProductCount, FallbackValue=0}" />
+			</StackPanel>
+			<StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="1">
+				<Button Background="Transparent" Foreground="Gray" Content="{Binding ClearButtonString}" />
+				<Button x:Name="OrderButton" Margin="20,0,0,0" Content="{Binding OrderButtonString}" />
+			</StackPanel>
+		</Grid>
+	</Grid>
+
+</Window>

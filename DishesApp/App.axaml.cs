@@ -1,4 +1,5 @@
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
@@ -11,6 +12,8 @@ namespace DishesApp
 {
     public partial class App : Application
     {
+        public static Window CurrentWindow { get; set; }
+
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
@@ -30,6 +33,14 @@ namespace DishesApp
             }
 
             base.OnFrameworkInitializationCompleted();
+        }
+
+        public static void NavigateTo(Window previousWindow, Window window, ViewModelBase viewModel)
+        {
+            previousWindow.Hide();
+            window.DataContext = viewModel;
+            window.Show();
+            previousWindow.Close();
         }
 
         private void DisableAvaloniaDataAnnotationValidation()
