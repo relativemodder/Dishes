@@ -24,7 +24,8 @@ namespace DishesApp.Views
 
             var box = MessageBoxManager.GetMessageBoxStandard(
                 "Подтверждение", $"Вы точно хотите заказать {context.ProductCount} товаров?", 
-                ButtonEnum.YesNo
+                ButtonEnum.YesNo,
+                MsBox.Avalonia.Enums.Icon.Question
             );
             var result = await box.ShowAsync();
 
@@ -32,7 +33,8 @@ namespace DishesApp.Views
             {
                 var box1 = MessageBoxManager.GetMessageBoxStandard(
                     "Успех!", $"Заказано {context.ProductCount} товаров!",
-                    ButtonEnum.Ok
+                    ButtonEnum.Ok,
+                    MsBox.Avalonia.Enums.Icon.Success
                 );
                 await box1.ShowAsync();
             }
