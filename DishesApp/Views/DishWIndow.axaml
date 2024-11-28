@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:DishesApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="using:DishesApp.Views"
+        mc:Ignorable="d" Width="700" Height="450"
+        x:Class="DishesApp.Views.DishWindow"
+        x:DataType="vm:DishWindowViewModel"
+        WindowStartupLocation="CenterScreen" 
+        Icon="/Assets/icon.ico" Background="WhiteSmoke"
+        Title="{Binding Product.Name, FallbackValue='Название товара'}">
+
+    <Design.DataContext>
+        <vm:DishWindowViewModel/>
+    </Design.DataContext>
+
+	<Grid RowDefinitions="50,*">
+		<views:HeaderBar x:Name="WindowHeaderBar">
+			<views:HeaderBar.Effect>
+				<DropShadowEffect BlurRadius="10" Opacity="0.1" />
+			</views:HeaderBar.Effect>
+		</views:HeaderBar>
+		<ScrollViewer 
+            VerticalAlignment="Stretch" 
+            HorizontalAlignment="Stretch" 
+            Grid.Row="1" 
+            Margin="10">
+            <StackPanel>
+                <TextBlock 
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Center"
+                    FontSize="26"
+                    Text="{Binding Product.Name, FallbackValue='Название товара'}" />
+            </StackPanel>
+		</ScrollViewer>
+	</Grid>
+
+</Window>
