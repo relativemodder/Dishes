@@ -23,7 +23,7 @@ namespace DishesApp.Views
             CartWindowViewModel context = (CartWindowViewModel)DataContext;
 
             var box = MessageBoxManager.GetMessageBoxStandard(
-                "", $"{context.ProductCount}?", 
+                "Подтверждение", $"Вы точно хотите заказать {context.ProductCount} товаров?", 
                 ButtonEnum.YesNo
             );
             var result = await box.ShowAsync();
@@ -31,7 +31,7 @@ namespace DishesApp.Views
             if (result == ButtonResult.Yes)
             {
                 var box1 = MessageBoxManager.GetMessageBoxStandard(
-                    "!", $"{context.ProductCount}!",
+                    "Успех!", $"Заказано {context.ProductCount} товаров!",
                     ButtonEnum.Ok
                 );
                 await box1.ShowAsync();
