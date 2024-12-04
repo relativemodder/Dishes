@@ -27,6 +27,8 @@ namespace DishesApp.Views
                     WindowHeaderBar.LoginButton_Click(null, null);
                 }
             };
+
+            var suka = Products.GetInstance().GetProduct("");
         }
 
         private void WindowHeaderBar_DataContextChanged(object? sender, EventArgs e)
