@@ -13,8 +13,6 @@ namespace DishesApp.Services
     {
         private static Database? instance;
 
-        private MySqlConnection? connection;
-
         public static Database GetDatabase()
         {
             if (instance == null)
@@ -37,7 +35,7 @@ namespace DishesApp.Services
 
         private MySqlConnection Connect()
         {
-            connection = new MySqlConnection(GetConnectionString());
+            var connection = new MySqlConnection(GetConnectionString());
             connection.Open();
 
             return connection;
@@ -45,12 +43,16 @@ namespace DishesApp.Services
 
         public MySqlConnection GetConnection()
         {
-            if (connection == null)
-            {
-                connection = Connect();
-            }
 
-            return connection;
+            return Connect();
+        }
+
+        public void CloseConnection()
+        {
+            // if (connection == null) return;
+            // 
+            // connection.Close();
+            // connection = null;
         }
 
 

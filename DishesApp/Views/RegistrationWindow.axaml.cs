@@ -2,12 +2,18 @@ using System;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using DishesApp.Services;
 using DishesApp.ViewModels;
+using MsBox.Avalonia.Enums;
+using MsBox.Avalonia;
 
 namespace DishesApp.Views
 {
     public partial class RegistrationWindow : Window
     {
+        public delegate void OnRegistrationDelegate();
+        public event OnRegistrationDelegate OnRegistration;
+
         public RegistrationWindow()
         {
             InitializeComponent();
@@ -25,6 +31,18 @@ namespace DishesApp.Views
 
         private void RegistrationButton_Click(object? sender, RoutedEventArgs e)
         {
+            var userResult = Users.GetInstance().Register(
+                EmailTextBox.Text,
+                PasswordTextBox.Text,
+                SurnameTextBox.Text,
+                NameTextBox.Text,
+                PatronymicTextBox.Text
+            );
+
+            Session.GetInstance().SetUser(userResult);
+
+            OnRegistration?.Invoke();
+
             Close();
         }
 
