@@ -4,9 +4,13 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using MsBox.Avalonia;
 using DishesApp.ViewModels;
 using DishesApp.Views;
 using System.Linq;
+using DishesApp.Services;
+using MsBox.Avalonia.Enums;
+using System;
 
 namespace DishesApp
 {
@@ -26,6 +30,23 @@ namespace DishesApp
                 // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
                 // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
                 DisableAvaloniaDataAnnotationValidation();
+
+
+                try
+                {
+                    Database.GetDatabase().GetConnection();
+                }
+                catch (Exception ex)
+                {
+                    var box = MessageBoxManager
+                    .GetMessageBoxStandard("Ошибка", $"Не удалось подключиться к базе данных, перепроверьте данные для подключения. \n\nОшибка: {ex.Message}",
+                       ButtonEnum.Ok, Icon.Database);
+
+                    box.ShowAsync();
+
+                    return;
+                }
+
                 desktop.MainWindow = new MainWindow
                 {
                     DataContext = new MainWindowViewModel(),
