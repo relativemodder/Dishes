@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using DishesApp.Services;
 using DishesApp.ViewModels;
 using System;
 
@@ -18,6 +19,14 @@ namespace DishesApp.Views
 
             DataContextChanged += MainWindow_DataContextChanged;
             WindowHeaderBar.DataContextChanged += WindowHeaderBar_DataContextChanged;
+
+            Opened += (s, idk) =>
+            {
+                if (Session.GetInstance().GetUser() == null)
+                {
+                    WindowHeaderBar.LoginButton_Click(null, null);
+                }
+            };
         }
 
         private void WindowHeaderBar_DataContextChanged(object? sender, EventArgs e)

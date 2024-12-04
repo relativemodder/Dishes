@@ -67,7 +67,7 @@ namespace DishesApp.Views
             App.NavigateTo(prevWindow, mainWindow, new MainWindowViewModel());
         }
 
-        private void LoginButton_Click(object? sender, RoutedEventArgs e)
+        public void LoginButton_Click(object? sender, RoutedEventArgs e)
         {
             var data = DataContext as HeaderBarViewModel;
 
