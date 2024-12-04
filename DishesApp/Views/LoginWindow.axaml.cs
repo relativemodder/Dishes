@@ -20,6 +20,7 @@ namespace DishesApp.Views
             KeyDown += LoginWindow_KeyDown;
             LoginButton.Click += LoginButton_Click;
             RegistrationButton.Click += RegistrationButton_Click;
+            Captcha.IsVisible = false;
         }
 
         private void LoginWindow_KeyDown(object? sender, KeyEventArgs e)
@@ -44,6 +45,16 @@ namespace DishesApp.Views
 
         private void LoginButton_Click(object? sender, RoutedEventArgs e)
         {
+            if (Captcha.IsVisible && CaptchaTextBox.Text != "Test")
+            {
+                var box = MessageBoxManager
+                   .GetMessageBoxStandard("ќшибка", $"¬ведите капчу верно!",
+                      ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Forbidden);
+
+                box.ShowAsync();
+                return;
+            }
+
             var loginResult = Users.GetInstance().Login(EmailTextBox.Text, PasswordTextBox.Text);
 
             if (loginResult == null)
@@ -53,6 +64,7 @@ namespace DishesApp.Views
                        ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Forbidden);
 
                 box.ShowAsync();
+                Captcha.IsVisible = true;
                 return;
             }
 

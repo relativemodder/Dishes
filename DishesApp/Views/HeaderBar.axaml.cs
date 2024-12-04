@@ -40,6 +40,11 @@ namespace DishesApp.Views
 
                 HeaderBar_DataContextChanged(null, null);
             }
+
+            Session.GetInstance().OnGlobalStateChanged += (session) =>
+            {
+                HeaderBar_DataContextChanged(null, null);
+            };
         }
 
         private void HeaderBar_DataContextChanged(object? sender, EventArgs e)

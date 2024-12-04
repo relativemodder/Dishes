@@ -9,6 +9,9 @@ namespace DishesApp.Services
 {
     public class Session
     {
+        public delegate void GlobalStateChanged(Session session);
+        public event GlobalStateChanged OnGlobalStateChanged;
+
         private static Session? instance;
 
         private User? user;
@@ -31,6 +34,7 @@ namespace DishesApp.Services
         public void SetUser(User user)
         {
             this.user = user;
+            OnGlobalStateChanged?.Invoke(this);
         }
     }
 }

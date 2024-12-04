@@ -11,7 +11,7 @@ xmlns:views="using:DishesApp.Views"
 		<vm:DishesListViewModel />
 	</Design.DataContext>
 
-	<StackPanel>
+	<StackPanel x:Name="ItemsStack">
 		<views:DishItem />
 		<views:DishItem />
 		<views:DishItem />
