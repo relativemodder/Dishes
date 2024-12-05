@@ -10,12 +10,6 @@ namespace DishesApp.ViewModels
         public string ProductCountString { get; } = "Товаров: ";
         public string ClearButtonString { get; } = "Очистить";
         public required List<Product> Products { get; set; }
-        public int ProductCount 
-        { 
-            get 
-            {
-                return Products.Count;    
-            } 
-        }
+        public int ProductCount { get; set; }
     }
 }

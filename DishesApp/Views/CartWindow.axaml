@@ -26,14 +26,18 @@
             HorizontalAlignment="Stretch"
             Grid.Row="1"
             Margin="10">
-			<views:DishesList />
+			<views:DishesList x:Name="CartProductsList" />
 		</ScrollViewer>
-		<Grid ColumnDefinitions="*,200" Grid.Row="2" Background="White">
+		<Grid ColumnDefinitions="*,*,200" Grid.Row="2" Background="White">
 			<StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0,0,0">
 				<TextBlock VerticalAlignment="Center" Text="{Binding ProductCountString}" />
-				<TextBlock VerticalAlignment="Center" Text="{Binding ProductCount, FallbackValue=0}" />
+				<TextBlock x:Name="ProductCountTextBlock" VerticalAlignment="Center" Text="{Binding ProductCount, FallbackValue=0}" />
 			</StackPanel>
-			<StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="1">
+			<StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1" Margin="20,0,0,0">
+				<TextBlock VerticalAlignment="Center" Text="На сумму: " />
+				<TextBlock x:Name="CartPriceTextBlock" VerticalAlignment="Center" Text="0 руб." />
+			</StackPanel>
+			<StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="2">
 				<Button Background="Transparent" Foreground="Gray" Content="{Binding ClearButtonString}" />
 				<Button x:Name="OrderButton" Margin="20,0,0,0" Content="{Binding OrderButtonString}" />
 			</StackPanel>

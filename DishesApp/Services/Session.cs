@@ -15,6 +15,7 @@ namespace DishesApp.Services
         private static Session? instance;
 
         private User? user;
+        private Dictionary<Product, int> cart = new Dictionary<Product, int>();
 
         public static Session GetInstance()
         {
@@ -35,6 +36,16 @@ namespace DishesApp.Services
         {
             this.user = user;
             OnGlobalStateChanged?.Invoke(this);
+        }
+
+        public Dictionary<Product, int> GetCart()
+        {
+            return cart;
+        }
+
+        public void AddToCart(Product product, int count)
+        {
+            cart[product] = cart.GetValueOrDefault(product, 0) + count;
         }
     }
 }
