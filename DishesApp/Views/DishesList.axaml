@@ -12,13 +12,7 @@ xmlns:views="using:DishesApp.Views"
 	</Design.DataContext>
 
 	<StackPanel x:Name="ItemsStack">
-		<views:DishItem />
-		<views:DishItem />
-		<views:DishItem />
-		<views:DishItem />
-		<views:DishItem />
-		<views:DishItem />
-		<views:DishItem />
+		
 	</StackPanel>
 	
 </UserControl>

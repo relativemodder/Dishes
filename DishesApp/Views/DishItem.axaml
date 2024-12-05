@@ -21,15 +21,11 @@
 			<StackPanel Margin="20,0,0,0" VerticalAlignment="Center" Grid.Column="1">
 				<TextBlock Text="{Binding Product.Name, FallbackValue='Название товара'}" />
 				<TextBlock Foreground="Gray" Text="{Binding Product.Manufacturer, FallbackValue='Производитель'}" />
-				<TextBlock Margin="0,10,0,0" Text="{Binding Product.Cost, FallbackValue='999.90 руб.', StringFormat='{}{0.00} руб.'}" />
+				<TextBlock Margin="0,10,0,0" Text="{Binding Product.Cost, FallbackValue='Нет данных' StringFormat='{}{0} руб.'}" />
 			</StackPanel>
 			<StackPanel Grid.Column="3" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right" Width="150">
-				<Grid ColumnDefinitions="*,90,*" HorizontalAlignment="Stretch">
-					<Button Content="-" Grid.Column="0" Background="Whitesmoke" Cursor="Hand" />
-					<TextBox Width="20" Text="0" Grid.Column="1" />
-					<Button Content="+" Grid.Column="2" Background="Whitesmoke" Cursor="Hand" />
-				</Grid>
-				<Button Margin="0,10,0,0" Content="Добавить" Background="Whitesmoke" Cursor="Hand" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
+				<TextBlock FontWeight="Bold" Text="Наличие:" />
+				<TextBlock Foreground="Gray" Margin="0,10,0,0" Text="{Binding Product.Status, FallbackValue=Неизвестно}" />
 			</StackPanel>
 		</Grid>
 	</Grid>

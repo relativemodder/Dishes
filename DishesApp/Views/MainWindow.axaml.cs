@@ -28,7 +28,8 @@ namespace DishesApp.Views
                 }
             };
 
-            var suka = Products.GetInstance().GetProduct("");
+            var products = Products.GetInstance().GetProducts();
+            this.DishesList.LoadData(products);
         }
 
         private void WindowHeaderBar_DataContextChanged(object? sender, EventArgs e)

@@ -21,7 +21,7 @@ namespace DishesApp.Views
             var dishWindow = new DishWindow();
             App.NavigateTo(prevWindow, dishWindow, new DishWindowViewModel()
             {
-                Product = null
+                Product = (DataContext as DishItemViewModel).Product
             });
         }
     }

@@ -54,12 +54,49 @@ namespace DishesApp.Services
                     Status = rdr.GetString("ProductStatus")
                 };
 
+                rdr.Close();
+
                 connection.Close();
 
                 return product;
             }
 
             return null;
+        }
+
+        public List<Product> GetProducts()
+        {
+            Database db = Database.GetDatabase();
+            db.CloseConnection();
+            var connection = db.GetConnection();
+
+            MySqlCommand myCommand = new MySqlCommand();
+            myCommand.Connection = connection;
+            myCommand.CommandText = @"SELECT ProductArticleNumber FROM Product";
+            // myCommand.Parameters.AddWithValue("@article", article);
+
+            MySqlDataReader rdr;
+
+            rdr = myCommand.ExecuteReader();
+
+            List<string> articles = new List<string>();
+
+            while (rdr.Read())
+            {
+                articles.Add(rdr.GetString("ProductArticleNumber"));
+            }
+
+            rdr.Close();
+            connection.Close();
+
+            List<Product> products = new List<Product>();
+
+            foreach (var article in articles)
+            {
+                products.Add(GetProduct(article));
+            }
+
+            return products;
         }
     }
 }
