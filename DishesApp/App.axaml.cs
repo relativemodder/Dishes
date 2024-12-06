@@ -39,7 +39,7 @@ namespace DishesApp
                 catch (Exception ex)
                 {
                     var box = MessageBoxManager
-                    .GetMessageBoxStandard("Ошибка", $"Не удалось подключиться к базе данных, перепроверьте данные для подключения. \n\nОшибка: {ex.Message}",
+                    .GetMessageBoxStandard("РћС€РёР±РєР°!", $"РќРµ СѓРґР°Р»РѕСЃСЊ РїРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С…. \n\nРџРѕРґСЂРѕР±РЅРµРµ: {ex.Message}",
                        ButtonEnum.Ok, Icon.Database);
 
                     box.ShowAsync();

@@ -48,7 +48,7 @@ namespace DishesApp.Views
             if (Captcha.IsVisible && CaptchaTextBox.Text != "Test")
             {
                 var box = MessageBoxManager
-                   .GetMessageBoxStandard("Ошибка", $"Введите капчу верно!",
+                   .GetMessageBoxStandard("РћС€РёР±РєР°", $"РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅР° РєР°РїС‡Р°!",
                       ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Forbidden);
 
                 box.ShowAsync();
@@ -60,7 +60,7 @@ namespace DishesApp.Views
             if (loginResult == null)
             {
                 var box = MessageBoxManager
-                    .GetMessageBoxStandard("Ошибка", $"Неверный логин или пароль!",
+                    .GetMessageBoxStandard("РћС€РёР±РєР°", $"РќРµРІРµСЂРЅС‹Р№ Р»РѕРіРёРЅ РёР»Рё РїР°СЂРѕР»СЊ!",
                        ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Forbidden);
 
                 box.ShowAsync();

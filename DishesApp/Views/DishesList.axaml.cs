@@ -37,8 +37,8 @@ namespace DishesApp.Views
 
                 if (IsCart)
                 {
-                    item.FirstText.Text = "Количество:";
-                    item.SecondText.Text = Session.GetInstance().GetCart().GetValueOrDefault(product, 0) + " шт.";
+                    item.FirstText.Text = "РљРѕР»РёС‡РµСЃС‚РІРѕ:";
+                    item.SecondText.Text = Session.GetInstance().GetCart().GetValueOrDefault(product, 0) + " С€С‚.";
                 }
             }
         }

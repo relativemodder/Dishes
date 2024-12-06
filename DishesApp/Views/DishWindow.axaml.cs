@@ -27,7 +27,7 @@ namespace DishesApp.Views
             Session.GetInstance().AddToCart(product, int.Parse(CountBox.Text));
 
             var box1 = MessageBoxManager.GetMessageBoxStandard(
-                    "Успех!", $"Добавлено {CountBox.Text} {product.Name} в корзину.",
+                    "РЈСЃРїРµС…!", $"{CountBox.Text} {product.Name} Р»РµР¶Р°С‚ РІ РєРѕСЂР·РёРЅРµ.",
                     ButtonEnum.Ok,
                     MsBox.Avalonia.Enums.Icon.Success
                 );
