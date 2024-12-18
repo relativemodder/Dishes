@@ -17,14 +17,16 @@ namespace DishesApp.Services
         {
             if (instance == null)
             {
-                instance = new Database();
+                instance = new Database(); // Реализуем паттерн Singleton
             }
 
             return instance;
         }
 
         public string GetConnectionString()
-        {
+        { 
+            // Безопасно берём из ОС переменные среды
+
             string host = Environment.GetEnvironmentVariable("DISHES_DB_HOST") ?? "localhost";
             string name = Environment.GetEnvironmentVariable("DISHES_DB_NAME") ?? "dishes";
             string user = Environment.GetEnvironmentVariable("DISHES_DB_USER") ?? "root";

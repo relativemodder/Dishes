@@ -17,7 +17,7 @@ namespace DishesApp.Services
         {
             if (instance == null)
             {
-                instance = new Products();
+                instance = new Products(); // Реализуем паттерн Singleton
             }
 
             return instance;
